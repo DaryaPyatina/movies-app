@@ -1,0 +1,50 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  gap: 20px;
+  padding-top: 30px;
+  justify-content: center;
+  width: 1010px;
+  height: 1147px;
+  flex-wrap: wrap;
+  margin: auto;
+  height: auto;
+}
+
+.paginationFooter {
+  display: flex;
+  justify-content: center;
+  padding: 36px;
+}
+
+.pageNotFound {
+  width: 500px;
+  height: 500px;
+}
+
+.spin {
+  margin: 20px 0;
+  margin-bottom: 20px;
+  padding: 30px 50px;
+  text-align: center;
+}
+
+@media (max-width: 420px) {
+  .list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 30px;
+    width: 340px;
+    height: auto;
+  }
+  .paginationFooter {
+    padding: 24px;
+  }
+}
