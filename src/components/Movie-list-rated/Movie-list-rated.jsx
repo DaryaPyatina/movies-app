@@ -14,7 +14,6 @@ export const MovieListRated = ({ tab }) => {
   useEffect(() => {
     const fetchMoviesRated = async () => {
       const { data } = await api.get(`/guest_session/${guestSessionId}/rated/movies`)
-      console.log(data)
 
       setCards(data.results)
     }

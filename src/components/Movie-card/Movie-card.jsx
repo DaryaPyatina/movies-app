@@ -16,26 +16,31 @@ export const MovieCard = ({ data }) => {
   const [imgMovies, setimgMovies] = useState('')
   const [genres, setGenres] = useState([])
   const [rating, setDefaultRating] = useState(0)
+
   const guestSessionId = useContext(GuestContext)
 
   useEffect(() => {
     const fetchDetails = async () => {
-      const { data: details } = await api.get(`/movie/${data.id}`)
-      const { data: info } = await api.get(`/movie/${data.id}/account_states`)
+      if (guestSessionId) {
+        const { data: details } = await api.get(`/movie/${data.id}`, { params: { guest_session_id: guestSessionId } })
+        const { data: info } = await api.get(`/movie/${data.id}/account_states`, {
+          params: { guest_session_id: guestSessionId },
+        })
 
-      setimgMovies(details.poster_path)
-      setGenres(details.genres)
-      setDefaultRating(info.rated.value)
+        setimgMovies(details.poster_path)
+        setGenres(details.genres)
+        setDefaultRating(info.rated.value)
+      }
     }
 
     fetchDetails()
-  }, [])
+  }, [guestSessionId])
 
   const setRating = async (number) => {
     setDefaultRating(number)
 
     if (number === 0) {
-      await api.delete(`/movie/${data.id}/rating`)
+      await api.delete(`/movie/${data.id}/rating`, { params: { guest_session_id: guestSessionId } })
     } else {
       await api.post(`/movie/${data.id}/rating`, { value: number }, { params: { guest_session_id: guestSessionId } })
     }
