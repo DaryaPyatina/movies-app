@@ -12,7 +12,7 @@
 
 .title {
   color: #000;
-  font-family: "Inter UI";
+  font-family: 'Inter UI';
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -27,7 +27,7 @@
 .rating-circle {
   width: 30px;
   height: 30px;
-  border: 2px solid #e9d100;
+  border: 2px solid;
   border-radius: 50%;
 
   display: flex;
@@ -54,7 +54,7 @@
 
 .date {
   padding-bottom: 9px;
-  font-family: "Inter UI";
+  font-family: 'Inter UI';
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -72,7 +72,7 @@
   line-height: 22px;
   padding-top: 10px;
   padding-right: 20px;
-  font-family: "Inter UI";
+  font-family: 'Inter UI';
 }
 .genres {
   display: flex;
