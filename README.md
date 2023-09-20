@@ -1,1 +1,1 @@
-https://movie-6eai77dwl-daryapyatina.vercel.app/
+https://movie-471ng9zqn-daryapyatina.vercel.app/
